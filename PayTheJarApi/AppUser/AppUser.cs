@@ -16,12 +16,12 @@ namespace PayTheJarApi.AppUser
         [JsonProperty("username")]
         public string UserName { get; set; }
 
-        [BsonElement("firstname")]
-        [JsonProperty("firstname")]
+        [BsonElement("firstName")]
+        [JsonProperty("firstName")]
         public string FirstName { get; set; }
 
-        [BsonElement("lastname")]
-        [JsonProperty("lastname")]
+        [BsonElement("lastName")]
+        [JsonProperty("lastName")]
         public string LastName { get; set; }
 
         [BsonElement("avatarUrl")]
