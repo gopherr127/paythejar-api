@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace PayTheJarApi.AppUser
+namespace PayTheJarApi.AppUsers
 {
     public class AppUsersController : ApiController
     {

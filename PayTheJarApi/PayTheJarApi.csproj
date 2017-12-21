@@ -157,24 +157,29 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppUser\AppUser.cs" />
-    <Compile Include="AppUser\AppUserContext.cs" />
-    <Compile Include="AppUser\AppUserRepository.cs" />
-    <Compile Include="AppUser\AppUsersController.cs" />
-    <Compile Include="AppUser\IAppUserRepository.cs" />
+    <Compile Include="AppUsers\AppUser.cs" />
+    <Compile Include="AppUsers\AppUserContext.cs" />
+    <Compile Include="AppUsers\AppUserRepository.cs" />
+    <Compile Include="AppUsers\AppUsersController.cs" />
+    <Compile Include="AppUsers\IAppUserRepository.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="ContextBase.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Fouls\Foul.cs" />
+    <Compile Include="Fouls\FoulContext.cs" />
+    <Compile Include="Fouls\FoulRepository.cs" />
+    <Compile Include="Fouls\FoulsController.cs" />
+    <Compile Include="Fouls\IFoulRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="IocContainer.cs" />
-    <Compile Include="Jar\IJarRepository.cs" />
-    <Compile Include="Jar\Jar.cs" />
-    <Compile Include="Jar\JarContext.cs" />
-    <Compile Include="Jar\JarRepository.cs" />
-    <Compile Include="Jar\JarsController.cs" />
+    <Compile Include="Jars\IJarRepository.cs" />
+    <Compile Include="Jars\Jar.cs" />
+    <Compile Include="Jars\JarContext.cs" />
+    <Compile Include="Jars\JarRepository.cs" />
+    <Compile Include="Jars\JarsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

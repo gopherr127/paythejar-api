@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace PayTheJarApi.AppUser
+namespace PayTheJarApi.AppUsers
 {
     public class AppUserRepository : IAppUserRepository
     {

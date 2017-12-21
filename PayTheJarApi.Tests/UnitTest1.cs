@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PayTheJarApi.AppUser;
-using PayTheJarApi.Jar;
+using PayTheJarApi.AppUsers;
+using PayTheJarApi.Fouls;
+using PayTheJarApi.Jars;
 using RandomNameGenerator;
 
 namespace PayTheJarApi.Tests
@@ -24,7 +25,7 @@ namespace PayTheJarApi.Tests
 
             for (int i = 0; i < 101; i++)
             {
-                await repo.Add(new Jar.Jar()
+                await repo.Add(new Jar()
                 {
                     Name = "Jar " + i,
                     Category = "Uncategorized",
@@ -50,7 +51,7 @@ namespace PayTheJarApi.Tests
                 string userName = firstName.ToLower() + lastName;
                 string avatarUrl = "https://api.adorable.io/avatars/" + rdm.Next(235, 3571);
 
-                await repo.Add(new AppUser.AppUser()
+                await repo.Add(new AppUser()
                 {
                     UserName = userName,
                     FirstName = firstName,
@@ -58,6 +59,29 @@ namespace PayTheJarApi.Tests
                     AvatarUrl = avatarUrl,
                     Location = "Nowhere",
                     RegistrationDate = DateTime.UtcNow.ToString()
+                });
+            }
+        }
+
+        [TestMethod]
+        public async Task TestMethod4()
+        {
+            FoulRepository repo = new FoulRepository();
+            Random rdm = new Random();
+
+            for (int i = 0; i < 101; i++)
+            {
+                int randomNum = rdm.Next(2345, 45873249);
+                int ones = rdm.Next(0, 1);
+                int tenths = rdm.Next(0, 9);
+                int hundredths = rdm.Next(0, 9);
+
+                await repo.Add(new Foul()
+                {
+                    Name = "Foul " + randomNum,
+                    Description = "Description of Foul " + randomNum,
+                    PenaltyAmount = Convert.ToDouble(
+                        ones.ToString() + "." + tenths.ToString() + hundredths.ToString())
                 });
             }
         }

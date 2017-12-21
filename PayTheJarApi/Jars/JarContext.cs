@@ -1,6 +1,6 @@
 ﻿using MongoDB.Driver;
 
-namespace PayTheJarApi.Jar
+namespace PayTheJarApi.Jars
 {
     public class JarContext : ContextBase
     {

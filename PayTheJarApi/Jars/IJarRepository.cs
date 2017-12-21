@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace PayTheJarApi.Jar
+namespace PayTheJarApi.Jars
 {
     public interface IJarRepository
     {

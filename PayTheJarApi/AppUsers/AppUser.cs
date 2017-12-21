@@ -3,7 +3,7 @@ using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using Newtonsoft.Json;
 
-namespace PayTheJarApi.AppUser
+namespace PayTheJarApi.AppUsers
 {
     public class AppUser
     {

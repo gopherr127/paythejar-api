@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace PayTheJarApi.Jar
+namespace PayTheJarApi.Jars
 {
     public class JarsController : ApiController
     {

@@ -3,7 +3,7 @@ using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using Newtonsoft.Json;
 
-namespace PayTheJarApi.Jar
+namespace PayTheJarApi.Jars
 {
     public class Jar
     {

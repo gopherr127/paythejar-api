@@ -1,6 +1,6 @@
 ﻿using MongoDB.Driver;
 
-namespace PayTheJarApi.AppUser
+namespace PayTheJarApi.AppUsers
 {
     public class AppUserContext : ContextBase
     {
