@@ -1,6 +1,7 @@
 ﻿using PayTheJarApi.AppUsers;
 using PayTheJarApi.Fouls;
 using PayTheJarApi.Jars;
+using PayTheJarApi.JarTransactions;
 using SimpleInjector;
 using SimpleInjector.Lifestyles;
 
@@ -20,6 +21,7 @@ namespace PayTheJarApi
 
                     // Type registration for dependency injection
                     _instance.Register<IJarRepository, JarRepository>(Lifestyle.Singleton);
+                    _instance.Register<IJarTransactionRepository, JarTransactionRepository>(Lifestyle.Singleton);
                     _instance.Register<IAppUserRepository, AppUserRepository>(Lifestyle.Singleton);
                     _instance.Register<IFoulRepository, FoulRepository>(Lifestyle.Singleton);
                 }

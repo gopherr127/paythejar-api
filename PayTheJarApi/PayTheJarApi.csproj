@@ -175,11 +175,16 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="IocContainer.cs" />
+    <Compile Include="JarFoulEvents\JarFoulEvent.cs" />
     <Compile Include="Jars\IJarRepository.cs" />
     <Compile Include="Jars\Jar.cs" />
     <Compile Include="Jars\JarContext.cs" />
     <Compile Include="Jars\JarRepository.cs" />
     <Compile Include="Jars\JarsController.cs" />
+    <Compile Include="JarTransactions\IJarTransactionRepository.cs" />
+    <Compile Include="JarTransactions\JarTransactionContext.cs" />
+    <Compile Include="JarTransactions\JarTransactionRepository.cs" />
+    <Compile Include="JarTransactions\JarTransaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

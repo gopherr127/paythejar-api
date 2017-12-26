@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using Newtonsoft.Json;
@@ -35,5 +36,9 @@ namespace PayTheJarApi.AppUsers
         [BsonElement("location")]
         [JsonProperty("location")]
         public string Location { get; set; }
+
+        [BsonElement("jars")]
+        [JsonProperty("jars")]
+        public List<ObjectId> Jars { get; set; }
     }
 }

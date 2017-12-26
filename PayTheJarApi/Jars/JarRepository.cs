@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -27,7 +28,7 @@ namespace PayTheJarApi.Jars
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("An error occurred while attempting to get Jar data: " + ex.Message);
+                throw new ApplicationException("Error: " + ex.Message);
             }
         }
 
@@ -35,12 +36,12 @@ namespace PayTheJarApi.Jars
         {
             try
             {
-                var filter = Builders<Jar>.Filter.Eq("Id", id);
+                var filter = Builders<Jar>.Filter.Eq("_id", ObjectId.Parse(id));
                 return await _context.Jars.Find(filter).FirstOrDefaultAsync();
             }
             catch(Exception ex)
             {
-                throw new ApplicationException("An error occurred while attempting to get Jar data: " + ex.Message);
+                throw new ApplicationException("Error: " + ex.Message);
             }
         }
 
@@ -48,11 +49,15 @@ namespace PayTheJarApi.Jars
         {
             try
             {
+                if (item.Id == null || item.Id == ObjectId.Empty)
+                {
+                    item.Id = ObjectId.GenerateNewId();
+                }
                 await _context.Jars.InsertOneAsync(item);
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("An error occurred while attempting to insert Jar data: " + ex.Message);
+                throw new ApplicationException("Error: " + ex.Message);
             }
         }
 
@@ -66,7 +71,7 @@ namespace PayTheJarApi.Jars
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("An error occurred while attempting to update Jar data: " + ex.Message);
+                throw new ApplicationException("Error: " + ex.Message);
             }
         }
 
@@ -80,7 +85,7 @@ namespace PayTheJarApi.Jars
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("An error occurred while attempting to delete Jar data: " + ex.Message);
+                throw new ApplicationException("Error: " + ex.Message);
             }
         }
     }
