@@ -12,18 +12,19 @@ namespace PayTheJarApi.Tests
     public class UnitTest1
     {
         [TestMethod]
-        public async Task TestMethod1()
+        public async Task GetAllJars()
         {
             JarRepository repo = new JarRepository();
             var results = await repo.GetAll(1);
         }
 
         [TestMethod]
-        public async Task TestMethod2()
+        public async Task AddJars()
         {
+            int numJarsToCreate = 50;
             JarRepository repo = new JarRepository();
-
-            for (int i = 0; i < 101; i++)
+            
+            for (int i = 0; i < numJarsToCreate; i++)
             {
                 await repo.Add(new Jar()
                 {
@@ -37,12 +38,13 @@ namespace PayTheJarApi.Tests
         }
 
         [TestMethod]
-        public async Task TestMethod3()
+        public async Task AddAppUsers()
         {
+            int numAppUsersToCreate = 50;
             AppUserRepository repo = new AppUserRepository();
             Random rdm = new Random();
 
-            for (int i = 0; i < 101; i++)
+            for (int i = 0; i < numAppUsersToCreate; i++)
             {
                 string firstName = NameGenerator.GenerateFirstName((Gender)rdm.Next(0,1));
                 firstName = firstName.Substring(0, 1) + firstName.Substring(1).ToLower();
@@ -64,12 +66,13 @@ namespace PayTheJarApi.Tests
         }
 
         [TestMethod]
-        public async Task TestMethod4()
+        public async Task AddFouls()
         {
+            int numFoulsToCreate = 1;
             FoulRepository repo = new FoulRepository();
             Random rdm = new Random();
 
-            for (int i = 0; i < 101; i++)
+            for (int i = 0; i < numFoulsToCreate; i++)
             {
                 int randomNum = rdm.Next(2345, 45873249);
                 int ones = rdm.Next(0, 1);

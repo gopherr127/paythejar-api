@@ -1,4 +1,6 @@
 ﻿using MongoDB.Driver;
+using System;
+using System.Configuration;
 using System.Security.Authentication;
 
 namespace PayTheJarApi
@@ -9,8 +11,8 @@ namespace PayTheJarApi
 
         public ContextBase()
         {
-            string connectionString =
-                @"mongodb://paythejar:mTsgccwX3W7pAzJSHgmbtGzlQR0BV9Igr174ZBENd3Su0gyCLnQGuIgQvAgSAY3bVf9RWYbvmAXdcRmVCHbR3Q==@paythejar.documents.azure.com:10255/?ssl=true&replicaSet=globaldb";
+            string connectionString = ConfigurationManager.AppSettings["dbConnStr"];
+            
             MongoClientSettings settings = MongoClientSettings.FromUrl(new MongoUrl(connectionString));
             settings.SslSettings = new SslSettings() { EnabledSslProtocols = SslProtocols.Tls12 };
             var mongoClient = new MongoClient(settings);
